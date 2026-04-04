@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Hero {
+  id         Int      @id @default(autoincrement())
+  externalId String   @unique @default(uuid())
+  name       String
+  weapons    Weapon[]
+}
+
+model Weapon {
+  id         Int    @id @default(autoincrement())
+  externalId String @unique @default(uuid())
+  name       String
+  hero       Hero   @relation(fields: [heroId], references: [id])
+  heroId     Int
+}
