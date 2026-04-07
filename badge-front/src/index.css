@@ -1,0 +1,195 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Geist Variable', sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #EAF5EE;
+  /* softened warm parchment */
+  /* Warm Parchment (light mode) */
+  --foreground: #1B3022;
+  /* Deep Forest (primary text - light) */
+  --card: #F4FAF6;
+  ;
+  /* Pure White (surfaces/cards - light) */
+  --card-foreground: #1B3022;
+  --card: #FBF5EE;
+  /* lighter, soft cream for widgets (less amber) */
+  --popover: #F4FAF6;
+  --popover-foreground: #1B3022;
+  --primary: #b57748;
+  /* slightly deeper amber to reduce brightness */
+  /* Deep Amber (primary action - light) */
+  --primary-foreground: #EFEDE7;
+  /* Almond Cream for contrast on primary */
+  --secondary: var(--secondary);
+  --secondary-foreground: var(--secondary-foreground);
+  --muted: var(--muted);
+  --muted-foreground: #4B5563;
+  /* Slate Moss (secondary text - light) */
+  --accent: var(--accent);
+  --accent-foreground: var(--accent-foreground);
+  --destructive: #B91C1C;
+  /* Burnt Clay (critical alert - light) */
+  --border: #E6E2DB;
+  /* subtle warm border for light mode */
+  --input: #ECE8E0;
+  /* light input background/border */
+  --ring: #D29A4A;
+  --border: #E9D6C2;
+  /* subtle warm-amber border for light mode (slightly stronger) */
+  --input: #F6E9DD;
+  /* slightly darker, warm input background for better contrast */
+  --chart-1: oklch(0.845 0.143 164.978);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.596 0.145 163.225);
+  --chart-4: oklch(0.508 0.118 165.612);
+  --chart-5: oklch(0.432 0.095 166.913);
+  --radius: 0.4rem;
+  --header-bg: #433f3d;
+  --header-foreground: #F6F3EE;
+  /* dark green header for light mode */
+  --sidebar: #55625a;
+  --sidebar-foreground: #F6F3EE;
+  --sidebar-primary: oklch(0.546 0.245 262.881);
+  --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: #E6E2DB;
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: #0D1A13;
+  /* Midnight Forest (dark mode) */
+  --foreground: #EFEDE7;
+  /* Almond Cream (primary text - dark) */
+  --card: #21382b;
+  /* slightly warmer Shadow Moss (surfaces/cards - dark) */
+  --card-foreground: #EFEDE7;
+  --popover: #1A2E23;
+  --popover-foreground: #EFEDE7;
+  --primary: #F59E0B;
+  /* Safety Amber (primary action - dark) */
+  --primary-foreground: #0D1A13;
+  /* dark text on amber for contrast */
+  --secondary: var(--secondary);
+  --secondary-foreground: var(--secondary-foreground);
+  --muted: var(--muted);
+  --muted-foreground: #9CA3AF;
+  /* Mist Grey (secondary text - dark) */
+  --accent: var(--accent);
+  --accent-foreground: var(--accent-foreground);
+  --destructive: #EF4444;
+  /* Cinnabar Red (critical alert - dark) */
+  --border: rgba(255, 255, 255, 0.06);
+  /* soft light border on dark */
+  --input: rgba(255, 255, 255, 0.04);
+  --ring: var(--ring);
+  --chart-1: oklch(0.845 0.143 164.978);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.596 0.145 163.225);
+  --chart-4: oklch(0.508 0.118 165.612);
+  --chart-5: oklch(0.432 0.095 166.913);
+  --sidebar: #17281e;
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.623 0.214 259.815);
+  --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+    height: 100%;
+  }
+
+  body,
+  #root {
+    height: 100%;
+  }
+
+  /* ensure shadcn Sidebar fixed container sits below header
+     - default `sidebar` variant should occupy full height minus header
+     - `floating` variant should be padded and auto height (a 'pad') */
+  /* default sidebar (variant on the ancestor `.sidebar`) */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar"][data-variant="sidebar"] [data-slot="sidebar-container"] {
+    top: 0 !important;
+    height: 100vh !important;
+    padding-top: var(--header-height, 0);
+  }
+
+  /* floating variant should be a padded panel under the header */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar"][data-variant="floating"] [data-slot="sidebar-container"] {
+    top: calc(var(--header-height, 0) + 1.7rem) !important;
+    bottom: 1.7rem !important;
+    height: auto !important;
+    padding: 0.25rem;
+    width: var(--sidebar-width, 12rem);
+    max-width: var(--sidebar-width, 12rem);
+    overflow: auto;
+  }
+
+  /* remove visual border on the sidebar container */
+  [data-slot="sidebar-wrapper"] [data-slot="sidebar"] [data-slot="sidebar-container"] {
+    border: none !important;
+  }
+
+
+}
