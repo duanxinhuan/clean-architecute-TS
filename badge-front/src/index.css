@@ -49,13 +49,13 @@
 }
 
 :root {
-  --background: #EAF5EE;
+  --background: #c8cfc1;
   /* softened warm parchment */
   /* Warm Parchment (light mode) */
   --foreground: #1B3022;
   /* Deep Forest (primary text - light) */
-  --card: #F4FAF6;
-  ;
+  --card: #EBE9E7;
+
   /* Pure White (surfaces/cards - light) */
   --card-foreground: #1B3022;
   --card: #FBF5EE;
@@ -70,7 +70,7 @@
   --secondary: var(--secondary);
   --secondary-foreground: var(--secondary-foreground);
   --muted: var(--muted);
-  --muted-foreground: #4B5563;
+  --muted-foreground: #9c5e06;
   /* Slate Moss (secondary text - light) */
   --accent: var(--accent);
   --accent-foreground: var(--accent-foreground);
@@ -90,11 +90,11 @@
   --chart-3: oklch(0.596 0.145 163.225);
   --chart-4: oklch(0.508 0.118 165.612);
   --chart-5: oklch(0.432 0.095 166.913);
-  --radius: 0.4rem;
-  --header-bg: #433f3d;
+  --radius: 0.7rem;
+  --header-bg: #333132;
   --header-foreground: #F6F3EE;
   /* dark green header for light mode */
-  --sidebar: #55625a;
+  --sidebar: #3b5763;
   --sidebar-foreground: #F6F3EE;
   --sidebar-primary: oklch(0.546 0.245 262.881);
   --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
@@ -121,7 +121,7 @@
   --secondary: var(--secondary);
   --secondary-foreground: var(--secondary-foreground);
   --muted: var(--muted);
-  --muted-foreground: #9CA3AF;
+  --muted-foreground: #afa99c;
   /* Mist Grey (secondary text - dark) */
   --accent: var(--accent);
   --accent-foreground: var(--accent-foreground);
@@ -191,5 +191,29 @@
     border: none !important;
   }
 
+  /* Replace hard borders with subtle shadows for cards and table rows */
+  [data-slot="table"] {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  /* table rows: remove border-bottom and use an inset shadow for a softer divider */
+  [data-slot="table"] [data-slot="table-row"] {
+    border-bottom: none !important;
+    box-shadow: inset 0 -1px 0 rgba(51, 49, 50, 0.08);
+  }
+
+  [data-slot="table"] [data-slot="table-header"],
+  [data-slot="table"] [data-slot="table-footer"] {
+    border-bottom: none !important;
+    box-shadow: inset 0 -1px 0 rgba(51, 49, 50, 0.12);
+  }
+
+  /* cards: remove hard border and use a subtle drop shadow */
+  .bg-card {
+    border: none !important;
+    box-shadow: 0 1px 4px rgba(51, 49, 50, 0.08);
+    outline-color: #333132;
+  }
 
 }

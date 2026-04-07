@@ -20,11 +20,11 @@ const buttonVariants = cva(
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         /* theme-specific action variants */
         logout:
-          "bg-primary/90 text-white hover:bg-primary/80 border border-transparent",
+          "bg-[#c4bdb7] text-[#1B3022] hover:bg-[#bfb6b0] border border-transparent",
         edit:
           "bg-primary/20 text-primary hover:bg-primary/30 border border-primary/10",
         delete:
-          "bg-destructive/90 text-white hover:bg-destructive/80",
+          "bg-[#9f7355] text-white hover:bg-[#8b5f48]",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
